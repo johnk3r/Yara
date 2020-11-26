@@ -1,4 +1,5 @@
-rule suspicious_msi_file {
+rule suspicious_msi_file : Amavaldo
+{
    meta:
       author = "Johnk3r"
       date = "08102020"
