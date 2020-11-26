@@ -8,5 +8,5 @@ rule suspicious_msi_file : Amavaldo
       $s1 = "\\custact\\x86\\AICustAct.pdb" wide ascii nocase
       $s2 = "FilesInZip=zipzipp" wide ascii nocase
    condition:
-      2 of them
+      3 of them
 }
