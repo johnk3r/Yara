@@ -1,1 +1,1 @@
-Repository containing Yara rule to detect Brazilian banking malware.
+Yara rules to detect some threats affecting Latin America.
