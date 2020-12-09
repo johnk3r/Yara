@@ -1,7 +1,7 @@
 rule detect_suspicious_zip
 {
     meta:
-        description = "Detects embedded BAT file in the ZIP"
+        description = "Detect embedded BAT file in the ZIP"
         author = "johnk3r"
         
     strings:
