@@ -13,5 +13,5 @@ rule suspicious_msi_file
       $d2 = "netapi32.dll" wide ascii nocase
       $d3 = "iphlpapi.dll" wide ascii nocase
    condition:
-      3 of ($s*) and 3 of ($d*)
+      4 of ($s*) and 4 of ($d*)
 }
