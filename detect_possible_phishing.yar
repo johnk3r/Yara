@@ -1,4 +1,4 @@
-rule detect_possible_phishing : Amavaldo
+rule detect_possible_phishing
 {
     meta:
         description = "Test rule for phishing detection"
