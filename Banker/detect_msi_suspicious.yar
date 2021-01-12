@@ -9,8 +9,6 @@ rule suspicious_msi_file
         //Common Banker_BR STRINGS
       $s0 = "Advanced Installer" wide ascii nocase
       $s1 = ".pdb" wide ascii nocase
-      $s2 = "FilesInZip=zipzipp" wide ascii nocase
-      $s3 = "ShellExecuteExW" wide ascii nocase
 
         //Common Banker_BR PE
       $p0 = "msi.dll" wide ascii nocase
