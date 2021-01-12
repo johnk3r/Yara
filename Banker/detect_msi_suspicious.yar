@@ -8,7 +8,8 @@ rule suspicious_msi_file
 
         //Common Banker_BR STRINGS
       $s0 = "Advanced Installer" wide ascii nocase
-      $s1 = ".pdb" wide ascii nocase
+      $s1 = "aicustact.pdb" wide ascii nocase
+      $s3 = "coriuadwqe32" wide ascii nocase
 
         //Common Banker_BR PE
       $p0 = "msi.dll" wide ascii nocase
@@ -21,5 +22,5 @@ rule suspicious_msi_file
       $a1 = "GetDesktopWindow"
       
    condition:
-      2 of ($s*) and 2 of ($p*) and 2 of ($a*)
+      2 of ($s*) and 2 of ($p*) and all of ($a*)
 }
