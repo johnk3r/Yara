@@ -22,5 +22,5 @@ rule suspicious_msi_file
       $a1 = "GetDesktopWindow"
       
    condition:
-      2 of ($s*) and 2 of ($p*) and all of ($a*)
+      2 of ($s*) and 3 of ($p*) and all of ($a*)
 }
