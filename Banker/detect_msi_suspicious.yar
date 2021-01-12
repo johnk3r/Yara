@@ -3,6 +3,7 @@ rule suspicious_msi_file
    meta:
       author = "Johnk3r"
       description= "Detects common strings and dlls in Banker_BR"
+      
    strings:
 
         //Common Banker_BR STRINGS
@@ -20,6 +21,7 @@ rule suspicious_msi_file
         //Common Banker_BR API
       $a0 = "EnumWindows"
       $a1 = "GetDesktopWindow"
+      
    condition:
       2 of ($s*) and 2 of ($p*) and 2 of ($a*)
 }
