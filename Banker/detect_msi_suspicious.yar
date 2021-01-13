@@ -2,25 +2,27 @@ rule suspicious_msi_file
 {
    meta:
       author = "Johnk3r"
-      description= "Detects common strings and dlls in Banker_BR"
-      
+      description= "Detects common strings, DLL and API in Banker_BR"
+      hash1 = "f0df269cb88a5ea4461b54dcd36bb8daa66360b1735bb5c0c2f5ce23d91e0260"
+      hash2 = "2b202d0e33047819ee2ece05ea92b00d4cd84aa32ec288764f4789660ea31b37"
+
    strings:
 
-        //Common Banker_BR STRINGS
-      $s0 = "Advanced Installer" wide ascii nocase
-      $s1 = "aicustact.pdb" wide ascii nocase
-      $s3 = "coriuadwqe32" wide ascii nocase
+        //Common Banker_BR strings
+      $s0 = "Advanced Installer" wide ascii nocase      //Packing string
+      $s1 = "AICustAct.pdb" wide ascii nocase           //Debug file
+      $s3 = "coriuadwqe32" wide ascii nocase            //String of an Author
 
         //Common Banker_BR PE
-      $p0 = "msi.dll" wide ascii nocase
-      $p1 = "aicustact.dll" wide ascii nocase
-      $p2 = "vmdetect.exe" wide ascii nocase
-      $p3 = "jli.dll" wide ascii nocase
+      $p0 = "msi.dll" wide ascii nocase                 //Safe DLL used for malicious actions
+      $p1 = "aicustact.dll" wide ascii nocase           //Checking internet connectivity
+      $p2 = "vmdetect.exe" wide ascii nocase            //Detect sandbox
+      $p3 = "jli.dll" wide ascii nocase                 //Malicious DLL
 
         //Common Banker_BR API
-      $a0 = "EnumWindows"
-      $a1 = "GetDesktopWindow"
-      
+      $a0 = "EnumWindows"                               //Enumerates all top-level windows on the screen
+      $a1 = "GetDesktopWindow"                          //Retrieves a handle to the desktop window
+
    condition:
       2 of ($s*) and 3 of ($p*) and all of ($a*)
 }
