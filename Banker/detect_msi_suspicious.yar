@@ -18,6 +18,7 @@ rule suspicious_msi_file
       $p1 = "aicustact.dll" wide ascii nocase           //Checking internet connectivity
       $p2 = "vmdetect.exe" wide ascii nocase            //Detect sandbox
       $p3 = "jli.dll" wide ascii nocase                 //Malicious DLL
+      $p4 = "ws3r3.dll" wide ascii nocase               //Malicious DLL
 
         //Common Banker_BR API
       $a0 = "EnumWindows"                               //Enumerates all top-level windows on the screen
