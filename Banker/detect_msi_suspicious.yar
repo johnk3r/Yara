@@ -23,7 +23,9 @@ rule suspicious_msi_file
         //Common Banker_BR API
       $a0 = "EnumWindows"                               //Enumerates all top-level windows on the screen
       $a1 = "GetDesktopWindow"                          //Retrieves a handle to the desktop window
+      $a2 = "GetForegroundWindow"                       //
+      $a3 = "EnumChildWindows"                          //
 
    condition:
-      2 of ($s*) and 3 of ($p*) and all of ($a*)
+      2 of ($s*) and 3 of ($p*) and 3 of ($a*)
 }
