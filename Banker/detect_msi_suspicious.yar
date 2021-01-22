@@ -9,7 +9,7 @@ rule suspicious_msi_file
    strings:
 
         //Common Banker_BR strings
-      $s0 = "Advanced Installer" wide ascii nocase      //Packing string
+      $s0 = "Advanced Installer" wide ascii nocase      //Packing MSI
       $s1 = "AICustAct.pdb" wide ascii nocase           //Debug file
       $s3 = "coriuadwqe32" wide ascii nocase            //String of an Author
 
