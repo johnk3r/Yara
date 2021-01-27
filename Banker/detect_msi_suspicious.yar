@@ -24,7 +24,7 @@ rule suspicious_msi_file
       $a0 = "EnumWindows"                               //Enumerates all top-level windows on the screen
       $a1 = "GetDesktopWindow"                          //Retrieves a handle to the desktop window
       $a2 = "GetForegroundWindow"                       //Retrieves a handle to the foreground window (the window with which the user is currently working)
-      $a3 = "EnumChildWindows"                          //Enumerates the child windows that belong to the specified parent window
+      $a3 = "EnumChildWindows"                          //Enumerates the child windows that belong to the specified parent windo
 
    condition:
       2 of ($s*) and 3 of ($p*) and 3 of ($a*)
