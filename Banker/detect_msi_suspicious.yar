@@ -28,5 +28,5 @@ rule suspicious_msi_file
       $a3 = "EnumChildWindows"                          //Enumerates the child windows that belong to the specified parent window
 
    condition:
-      2 of ($s*) and 3 of ($p*) and 3 of ($a*)
+      2 of ($s*) and 3 of ($p*) and 4 of ($a*)
 }
