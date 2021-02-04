@@ -15,6 +15,7 @@ rule suspicious_msi_file
       $s0 = "Advanced Installer" wide ascii nocase      //Packing MSI
       $s1 = "AICustAct.pdb" wide ascii nocase           //Debug file
       $s3 = "coriuadwqe32" wide ascii nocase            //String of an Author
+      $s4 = "kpdlvcUNVvfpwt" wide ascii nocase          //String of an Author
 
         //Common Banker_BR PE
       $p0 = "msi.dll" wide ascii nocase                 //Safe DLL used for malicious actions
