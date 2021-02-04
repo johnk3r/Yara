@@ -20,6 +20,7 @@ rule suspicious_msi_file
       $p3 = "jli.dll" wide ascii nocase                 //Malicious DLL
       $p4 = "ws3r3.dll" wide ascii nocase               //Malicious DLL
       $p5 = "luiz.dll" wide ascii nocase                //Malicious DLL
+      $p6 = "jscript" wide ascii nocase                 //JS in Custom Action
 
         //Common Banker_BR API
       $a0 = "EnumWindows"                               //Enumerates all top-level windows on the screen
