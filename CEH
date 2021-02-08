@@ -1,0 +1,33 @@
+#CEH DICAS
+# Brushed up my Nmap skills — A must need to tool.  - [INICIADO]
+# Brushed up my sqlmap — Another must needed tool.  - [INICIADO] 
+# Brushed up skills on Password brute-forcing Hydra - 
+# Brushed up wpscan skills — Another must needed tool - [INICIADO]
+# Brushed up John The Ripper - [INICIADO]
+# Learned Wireshark — You must learn this 
+# Learned Responder  - [INICIADO]
+# Enumeration WEB - [INICIADO]
+# Watched some Zero to Root videos — Which is not required for the exam but still, it will give you many hints.
+# Did some challenges on HTB — Stegno challenges  - [INICIADO]
+# SQLI no login
+
+### Inicio
+Enumeração para identificar as maquinas ativas
+Enumeração para identificar as portas abertas, versão do Windows e serviço nas maquinas ativas
+Verificar quais possuem acesso HTTP e tentar o SQLI
+Verificar serviços e tentar quebrar com hydra. Como exemplo RDP
+
+### Fonte
+https://anontuttuvenus.medium.com/ceh-practical-exam-review-185ea4cef82a
+https://fareedfauzi.gitbook.io/ctf-checklist-for-beginner/web
+https://anontuttuvenus.medium.com/ceh-practical-exam-review-185ea4cef82a
+
+### DICAS
+WPSCAN https://www.poftut.com/how-to-scan-wordpress-sites-with-wpscan-tutorial-for-security-vulnerabilities/
+SQLMAP https://www.100security.com.br/sqlmap
+NMAP   https://www.stationx.net/nmap-cheat-sheet/
+CEWL
+
+### LAB
+SQLMAP https://www.100security.com.br/sqlmap
+HASH https://sckull.github.io/posts/hashes/
