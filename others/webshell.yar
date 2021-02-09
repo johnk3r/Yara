@@ -254,7 +254,7 @@ private rule strrev
 rule SuspiciousEncoding
 {
     condition:
-        (b64 or hex or strrev or Hpack) and not IsWhitelisted
+        (b64 or hex or strrev or Hpack)
 }
 
 rule DodgyStrings
