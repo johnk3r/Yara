@@ -130,28 +130,6 @@ rule DangerousPhp
         (5 of them or #system > 250)
 }
 
-rule HiddenInAFile
-{
-    strings:
-        $gif = {47 49 46 38 ?? 61} // GIF8[version]a
-        $png = {89 50 4E 47 0D 0a 1a 0a} // \X89png\X0D\X0A\X1A\X0A
-        $jpeg = {FF D8 FF E0 ?? ?? 4A 46 49 46 } // https://raw.githubusercontent.com/corkami/pics/master/JPG.png
-
-    condition:
-        ($gif at 0 or $png at 0 or $jpeg at 0) and (PasswordProtection or ObfuscatedPhp or DodgyPhp or DangerousPhp)
-}
-
-rule CloudFlareBypass
-{
-    strings:
-        $ = "chk_jschl"
-        $ = "jschl_vc"
-        $ = "jschl_answer"
-
-    condition:
-        2 of them // Better be safe than sorry
-}
-
 private rule IRC
 {
     strings:
