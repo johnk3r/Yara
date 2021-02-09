@@ -18,15 +18,6 @@
         - https://stackoverflow.com/questions/3115559/exploitable-php-functions
 */
 
-global private rule IsPhp
-{
-    strings:
-        $php = /<\?[^x]/
-
-    condition:
-        $php and filesize < 5MB
-}
-
 rule NonPrintableChars
 {
   strings:
@@ -38,7 +29,7 @@ rule NonPrintableChars
     $non_printables = /(function|return|base64_decode).{,256}[^\x09-\x0d\x20-\x7E]{3}/
 
   condition:
-        (any of them) and not IsWhitelisted
+        any of them
 }
 
 
@@ -48,7 +39,7 @@ rule PasswordProtection
         $md5 = /md5\s*\(\s*\$_(GET|REQUEST|POST|COOKIE|SERVER)[^)]+\)\s*===?\s*['"][0-9a-f]{32}['"]/ nocase
         $sha1 = /sha1\s*\(\s*\$_(GET|REQUEST|POST|COOKIE|SERVER)[^)]+\)\s*===?\s*['"][0-9a-f]{40}['"]/ nocase
     condition:
-        (any of them) and not IsWhitelisted
+        any of them
 }
 
 rule ObfuscatedPhp
@@ -69,7 +60,7 @@ rule ObfuscatedPhp
         $var_as_func = /\$_(GET|POST|COOKIE|REQUEST|SERVER)\s*\[[^\]]+\]\s*\(/
         $comment = /\/\*([^*]|\*[^\/])*\*\/\s*\(/  // eval /* comment */ (php_code)
 condition:
-        (any of them) and not IsWhitelisted
+        any of them
 }
 
 rule DodgyPhp
@@ -97,10 +88,10 @@ rule DodgyPhp
         $double_var = /\${\s*\${/
         $extract = /extract\s*\(\s*\$_(GET|POST|REQUEST|COOKIE|SERVER)/
         $reversed = /noitcnuf_etaerc|metsys|urhtssap|edulcni|etucexe_llehs/ nocase
-				$silenced_include =/@\s*include\s*/ nocase
+	$silenced_include =/@\s*include\s*/ nocase
 
     condition:
-        (any of them) and not IsWhitelisted
+        any of them
 }
 
 rule DangerousPhp
@@ -160,7 +151,7 @@ rule DangerousPhp
         $whitelist = /escapeshellcmd|escapeshellarg/ nocase
 
     condition:
-        (not $whitelist and (5 of them or #system > 250)) and not IsWhitelisted
+        (5 of them or #system > 250)
 }
 
 rule HiddenInAFile
@@ -171,7 +162,7 @@ rule HiddenInAFile
         $jpeg = {FF D8 FF E0 ?? ?? 4A 46 49 46 } // https://raw.githubusercontent.com/corkami/pics/master/JPG.png
 
     condition:
-        ($gif at 0 or $png at 0 or $jpeg at 0) and (PasswordProtection or ObfuscatedPhp or DodgyPhp or DangerousPhp) and not IsWhitelisted
+        ($gif at 0 or $png at 0 or $jpeg at 0) and (PasswordProtection or ObfuscatedPhp or DodgyPhp or DangerousPhp)
 }
 
 rule CloudFlareBypass
@@ -333,7 +324,7 @@ rule DodgyStrings
         $asp = "scripting.filesystemobject" nocase
 
     condition:
-        (IRC or 2 of them) and not IsWhitelisted
+        (IRC or 2 of them)
 }
 
 rule Websites
@@ -364,5 +355,5 @@ rule Websites
         $ = "mumaasp.com" nocase
 
     condition:
-        (any of them) and not IsWhitelisted
+        (any of them)
 }
