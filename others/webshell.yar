@@ -18,30 +18,6 @@
         - https://stackoverflow.com/questions/3115559/exploitable-php-functions
 */
 
-rule NonPrintableChars
-{
-  strings:
-    /*
-    Searching only for non-printable characters completely kills the perf,
-    so we have to use atoms (https://gist.github.com/Neo23x0/e3d4e316d7441d9143c7)
-    to get an acceptable speed.
-    */
-    $non_printables = /(function|return|base64_decode).{,256}[^\x09-\x0d\x20-\x7E]{3}/
-
-  condition:
-        any of them
-}
-
-
-rule PasswordProtection
-{
-    strings:
-        $md5 = /md5\s*\(\s*\$_(GET|REQUEST|POST|COOKIE|SERVER)[^)]+\)\s*===?\s*['"][0-9a-f]{32}['"]/ nocase
-        $sha1 = /sha1\s*\(\s*\$_(GET|REQUEST|POST|COOKIE|SERVER)[^)]+\)\s*===?\s*['"][0-9a-f]{40}['"]/ nocase
-    condition:
-        any of them
-}
-
 rule ObfuscatedPhp
 {
     strings:
