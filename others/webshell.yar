@@ -16,8 +16,6 @@
         - https://github.com/wireghoul/htshells
     Thanks to:
         - https://stackoverflow.com/questions/3115559/exploitable-php-functions
-	https://www.virustotal.com/gui/file/5ae57d36167314896be5ccec6a4b1557daa59e51a1d26a7449489554df150941/detection
-	https://www.virustotal.com/gui/file/7300cdecdaa2c47eedf63286b35757447f06badf99866aa7fbb865e2b3aa683f/detection
 */
 
 rule ObfuscatedPhp
