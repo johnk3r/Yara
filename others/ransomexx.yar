@@ -3,6 +3,7 @@ rule Ransom_EXX_BR_Target {
       description = "Detects EXX variants with targets in the BR"
       description = "@VK_Intel|@StrangerealIntel"		
       author= "johnk3r"
+      name= "hxxps://asdfgbfvdcfghgbvfcdsxxcdvfbggr.s3.ap-northeast-3.amazonaws.com/ASDFGHJYUKJMHNGBFVDCS.html#gina.baccelli@itau.com.br"
    strings:
       $dbg1 = { 55 6e 65 78 70 65 63 74 65 64 20 65 72 72 6f 72 2c 20 72 65 74 75 72 6e 20 63 6f 64 65 20 3d 20 25 30 38 58 0a } // Unexpected error, return code = %08X\n    
       $dbg2 = { 47 72 65 65 74 69 6e 67 73 20 [3-10] 21 }
