@@ -9,8 +9,7 @@ rule suspicious_msi_file
    strings:
 
         //MSI Header
-      $msi = { D0 CF 11 E0 A1 B1 1A E1 }
-      
+       
         //Common Banker_BR strings
       $s0 = "Advanced Installer" wide ascii nocase      //Packing MSI
       $s1 = "AICustAct.pdb" wide ascii nocase           //Debug file
