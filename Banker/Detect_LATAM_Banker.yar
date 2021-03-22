@@ -1,4 +1,4 @@
-rule suspicious_msi_file
+rule Detect_LATAM_Banker
 {
    meta:
       author = "Johnk3r"
