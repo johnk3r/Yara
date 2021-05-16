@@ -23,3 +23,5 @@ IOC DOMAIN
 
 Ferramentas utilizadas:
     Detect It Easy
+    X64dbg
+    
