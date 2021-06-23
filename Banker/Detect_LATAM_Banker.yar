@@ -33,5 +33,5 @@ rule Detect_LATAM_Banker
       $a3 = "EnumChildWindows"                          //Enumerates the child windows that belong to the specified parent window
 
    condition:
-      $msi and 1 of ($s*) and 2 of ($p*) and 3 of ($a*)
+      $msi and 2 of ($s*) and 3 of ($p*) and 4 of ($a*)
 }
