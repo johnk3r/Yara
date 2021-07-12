@@ -9,3 +9,26 @@
 ### Command
 Process "netsh.exe" with commandline "netsh advfirewall firewall set rule group="Network Discovery" new enable=Yes" (UID: 00100316-00007800)
 
+Process Create:
+RuleName: technique_id=T1518.001,technique_name=Security Software Discovery
+UtcTime: 2021-07-12 14:22:51.261
+ProcessGuid: {1d6db1b9-503b-60ec-b45a-000000003500}
+ProcessId: 10960
+Image: C:\Windows\System32\netsh.exe
+FileVersion: 10.0.19041.1 (WinBuild.160101.0800)
+Description: Network Command Shell
+Product: Microsoft® Windows® Operating System
+Company: Microsoft Corporation
+OriginalFileName: netsh.exe
+CommandLine: netsh  advfirewall firewall set rule group="Network Discovery" new enable=Yes
+CurrentDirectory: C:\Users\JOHN_\
+User: DESKTOP-R8PURIJ\JOHN_
+LogonGuid: {1d6db1b9-48a5-60eb-6360-070000000000}
+LogonId: 0x76063
+TerminalSessionId: 1
+IntegrityLevel: Medium
+Hashes: SHA1=9184E64C36629A1DCEF084E19CC3E3BEF78F2D7B,MD5=6F1E6DD688818BC3D1391D0CC7D597EB,SHA256=6B691B06FA865F52C9484EF4F10E2E02ED6D7C3A3F474B8B138A33AF7258B2A9,IMPHASH=90B4317BE51850B8EF9F14EB56FB7DDC
+ParentProcessGuid: {1d6db1b9-5031-60ec-b25a-000000003500}
+ParentProcessId: 6376
+ParentImage: C:\Windows\System32\cmd.exe
+ParentCommandLine: "C:\Windows\system32\cmd.exe" 
